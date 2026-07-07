@@ -8,8 +8,21 @@ import { useEffect, useRef, useState } from "react";
 const NAV_IDS = ["work", "skills", "about"] as const;
 const GMAIL_COMPOSE_URL =
   "https://mail.google.com/mail/?view=cm&fs=1&to=as.lucasalves@gmail.com";
+const LANG_CHOICE_KEY = "lucas-lang-choice";
 
-export default function Portfolio({ initialLang }: { initialLang: Lang }) {
+function rememberLangChoice(l: Lang) {
+  try {
+    localStorage.setItem(LANG_CHOICE_KEY, l);
+  } catch { }
+}
+
+export default function Portfolio({
+  initialLang,
+  gitlabActivity,
+}: {
+  initialLang: Lang;
+  gitlabActivity?: React.ReactNode;
+}) {
   const lang = initialLang;
   const [active, setActive] = useState(0);
   const [activeNav, setActiveNav] = useState<string | null>(null);
@@ -109,10 +122,20 @@ export default function Portfolio({ initialLang }: { initialLang: Lang }) {
             ))}
           </div>
           <div className="lang-toggle">
-            <Link href="/" hrefLang="en" className={lang === "en" ? "active" : ""}>
+            <Link
+              href="/"
+              hrefLang="en"
+              className={lang === "en" ? "active" : ""}
+              onClick={() => rememberLangChoice("en")}
+            >
               EN
             </Link>
-            <Link href="/pt" hrefLang="pt-BR" className={lang === "pt" ? "active" : ""}>
+            <Link
+              href="/pt"
+              hrefLang="pt-BR"
+              className={lang === "pt" ? "active" : ""}
+              onClick={() => rememberLangChoice("pt")}
+            >
               PT
             </Link>
           </div>
@@ -261,6 +284,8 @@ export default function Portfolio({ initialLang }: { initialLang: Lang }) {
             </div>
           </div>
         </section>
+
+        {gitlabActivity}
 
         {/* SKILLS */}
         <section id="skills" className="reveal skills">

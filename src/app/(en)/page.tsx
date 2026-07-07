@@ -1,4 +1,6 @@
 import Portfolio from "@/components/Portfolio";
+import GitlabActivity from "@/components/GitlabActivity";
+import LocaleGate from "@/components/LocaleGate";
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -30,7 +32,8 @@ export default function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <Portfolio initialLang="en" />
+      <LocaleGate />
+      <Portfolio initialLang="en" gitlabActivity={<GitlabActivity lang="en" />} />
     </>
   );
 }

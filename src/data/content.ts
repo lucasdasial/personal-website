@@ -94,10 +94,10 @@ export const CONTENT: Record<Lang, LangContent> = {
       workSub:
         "Select a role to explore what I built, the problems I solved, and the stack behind it.",
       whatIDid: "What I did",
-      skillsEyebrow: "02 / Toolkit",
+      skillsEyebrow: "03 / Toolkit",
       skillsHeading: "The stack I reach for.",
       skillsSub: "I pick the right tool for the job and learn new ones when needed",
-      aboutEyebrow: "03 / About",
+      aboutEyebrow: "04 / About",
       aboutHeading:
         "Great software isn't defined by its technology, but by how simply and reliably it solves real problems.",
       aboutA: "Known as ",
@@ -110,7 +110,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       educationLabel: "Education",
       degree: "Associate Degree, Systems Analysis & Development",
       school: "UNAMA · Universidade da Amazônia · 2021–2023",
-      contactEyebrow: "04 / Contact",
+      contactEyebrow: "05 / Contact",
       contact1: "Let's build something",
       contact2: "worth building.",
       contactBody:
@@ -246,10 +246,10 @@ export const CONTENT: Record<Lang, LangContent> = {
       workSub:
         "Selecione um cargo para ver o que construí, os problemas que resolvi e a stack por trás.",
       whatIDid: "O que fiz",
-      skillsEyebrow: "02 / Ferramentas",
+      skillsEyebrow: "03 / Ferramentas",
       skillsHeading: "A stack que geralmente uso.",
       skillsSub: "Quando necessário, aprendo novas tecnologias.",
-      aboutEyebrow: "03 / Sobre",
+      aboutEyebrow: "04 / Sobre",
       aboutHeading:
         "Um bom software não é definido pela tecnologia que usa, mas por resolver problemas reais de forma simples e confiável.",
       aboutA: "Também sou conhecido como ",
@@ -262,7 +262,7 @@ export const CONTENT: Record<Lang, LangContent> = {
       educationLabel: "Formação",
       degree: "Tecnólogo em Análise e Desenvolvimento de Sistemas",
       school: "UNAMA · Universidade da Amazônia · 2021–2023",
-      contactEyebrow: "04 / Contato",
+      contactEyebrow: "05 / Contato",
       contact1: "Vamos construir algo",
       contact2: "que valha a pena.",
       contactBody:

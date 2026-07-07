@@ -672,6 +672,83 @@ nav {
   color: #555;
 }
 
+/* ---- activity ---- */
+.activity {
+  padding: clamp(60px, 8vw, 100px) 0;
+  border-top: 1px solid #efefef;
+}
+
+.activity h2 {
+  font-size: clamp(30px, 4.4vw, 52px);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  max-width: 15em;
+}
+
+.activity-total {
+  margin-top: 32px;
+  font-size: 13px;
+  color: #6b6b6b;
+}
+
+.calendar-scroll {
+  margin-top: 14px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.calendar-grid {
+  display: flex;
+  gap: 3px;
+  width: max-content;
+}
+
+.calendar-week {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.calendar-day {
+  width: 11px;
+  height: 11px;
+  border-radius: 2px;
+  background: #ebebeb;
+}
+
+.calendar-day.level-1 {
+  background: color-mix(in srgb, var(--accent) 30%, #ebebeb);
+}
+
+.calendar-day.level-2 {
+  background: color-mix(in srgb, var(--accent) 55%, #ebebeb);
+}
+
+.calendar-day.level-3 {
+  background: color-mix(in srgb, var(--accent) 80%, #ebebeb);
+}
+
+.calendar-day.level-4 {
+  background: var(--accent);
+}
+
+.calendar-legend {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #8a8a8a;
+}
+
+.activity-link {
+  margin-top: 28px;
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 500;
+  color: #0a0a0a;
+}
+
 /* ---- skills ---- */
 .skills {
   padding: clamp(70px, 9vw, 120px) 0;
