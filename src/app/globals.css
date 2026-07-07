@@ -209,7 +209,8 @@ nav {
   background: #fff;
 }
 
-.lang-toggle button {
+.lang-toggle a {
+  display: inline-block;
   padding: 6px 13px;
   border-radius: 999px;
   border: none;
@@ -220,10 +221,11 @@ nav {
   font-family: inherit;
   background: transparent;
   color: #6b6b6b;
+  text-decoration: none;
   transition: all 0.18s ease;
 }
 
-.lang-toggle button.active {
+.lang-toggle a.active {
   background: #0a0a0a;
   color: #fff;
 }

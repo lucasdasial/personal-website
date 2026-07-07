@@ -2,14 +2,15 @@
 
 import { CONTENT, type Lang } from "@/data/content";
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const NAV_IDS = ["work", "skills", "about"] as const;
 const GMAIL_COMPOSE_URL =
   "https://mail.google.com/mail/?view=cm&fs=1&to=as.lucasalves@gmail.com";
 
-export default function Portfolio() {
-  const [lang, setLangState] = useState<Lang>("en");
+export default function Portfolio({ initialLang }: { initialLang: Lang }) {
+  const lang = initialLang;
   const [active, setActive] = useState(0);
   const [activeNav, setActiveNav] = useState<string | null>(null);
 
@@ -21,13 +22,6 @@ export default function Portfolio() {
   const t = c.t;
   const job = c.jobs[active];
   const year = new Date().getFullYear();
-
-  useEffect(() => {
-    try {
-      const saved = localStorage.getItem("lucas-lang");
-      if (saved === "pt" || saved === "en") setLangState(saved);
-    } catch { }
-  }, []);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -95,13 +89,6 @@ export default function Portfolio() {
     };
   }, [lang]);
 
-  function setLang(l: Lang) {
-    setLangState(l);
-    try {
-      localStorage.setItem("lucas-lang", l);
-    } catch { }
-  }
-
   return (
     <div ref={rootRef}>
       <nav>
@@ -122,20 +109,12 @@ export default function Portfolio() {
             ))}
           </div>
           <div className="lang-toggle">
-            <button
-              type="button"
-              className={lang === "en" ? "active" : ""}
-              onClick={() => setLang("en")}
-            >
+            <Link href="/" hrefLang="en" className={lang === "en" ? "active" : ""}>
               EN
-            </button>
-            <button
-              type="button"
-              className={lang === "pt" ? "active" : ""}
-              onClick={() => setLang("pt")}
-            >
+            </Link>
+            <Link href="/pt" hrefLang="pt-BR" className={lang === "pt" ? "active" : ""}>
               PT
-            </button>
+            </Link>
           </div>
           <a className="btn-dark" href={GMAIL_COMPOSE_URL} target="_blank" rel="noopener">
             {t.getInTouch}
@@ -314,8 +293,8 @@ export default function Portfolio() {
               <Image
                 src="/assets/2.png"
                 alt="Working with the team at Idopter Labs"
-                width={900}
-                height={1600}
+                width={512}
+                height={512}
               />
             </div>
             <div className="eyebrow">{t.aboutEyebrow}</div>

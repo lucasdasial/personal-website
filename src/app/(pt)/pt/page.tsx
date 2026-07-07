@@ -5,9 +5,9 @@ const jsonLd = {
   "@type": "Person",
   name: "Lucas Alves",
   alternateName: "Dasial",
-  url: "https://lucasdasial.com.br",
+  url: "https://lucasdasial.com.br/pt",
   image: "https://lucasdasial.com.br/assets/lucas.jpeg",
-  jobTitle: "Backend Software Engineer",
+  jobTitle: "Engenheiro de Software Backend",
   worksFor: {
     "@type": "Organization",
     name: "Idopter Labs",
@@ -21,7 +21,7 @@ const jsonLd = {
   knowsAbout: ["Elixir", "Phoenix", "PostgreSQL", "Node.js", "TypeScript", "GraphQL"],
 };
 
-export default function Home() {
+export default function HomePt() {
   return (
     <>
       <script
@@ -30,7 +30,7 @@ export default function Home() {
           __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
         }}
       />
-      <Portfolio />
+      <Portfolio initialLang="pt" />
     </>
   );
 }

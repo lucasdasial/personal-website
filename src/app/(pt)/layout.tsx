@@ -1,18 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
-
-const geist = localFont({
-  src: "./fonts/Geist-VariableFont_wght.ttf",
-  variable: "--font-geist",
-  weight: "100 900",
-  display: "swap",
-});
+import { geist } from "@/lib/fonts";
+import "../globals.css";
 
 const SITE_URL = "https://lucasdasial.com.br";
-const TITLE = "Lucas Alves - Backend Software Engineer";
+const PT_URL = `${SITE_URL}/pt`;
+const TITLE = "Lucas Alves - Engenheiro de Software Backend";
 const DESCRIPTION =
-  "Lucas Alves (Dasial), a backend software engineer with five years shipping APIs and business-critical services in Elixir, Phoenix and PostgreSQL for digital banking, benefits, fleet and government platforms.";
+  "Lucas Alves (Dasial), engenheiro de software backend com cinco anos entregando APIs e serviços críticos em Elixir, Phoenix e PostgreSQL para plataformas de banking, benefícios, frotas e governo.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -24,8 +18,8 @@ export const metadata: Metadata = {
   keywords: [
     "Lucas Alves",
     "Dasial",
-    "Backend Engineer",
-    "Software Engineer",
+    "Engenheiro Backend",
+    "Engenheiro de Software",
     "Elixir",
     "Phoenix",
     "PostgreSQL",
@@ -35,16 +29,21 @@ export const metadata: Metadata = {
   authors: [{ name: "Lucas Alves", url: SITE_URL }],
   creator: "Lucas Alves",
   alternates: {
-    canonical: SITE_URL,
+    canonical: PT_URL,
+    languages: {
+      en: SITE_URL,
+      "pt-BR": PT_URL,
+      "x-default": SITE_URL,
+    },
   },
   openGraph: {
     type: "profile",
-    url: SITE_URL,
+    url: PT_URL,
     title: TITLE,
     description: DESCRIPTION,
     siteName: "Lucas Alves",
-    locale: "en_US",
-    alternateLocale: ["pt_BR"],
+    locale: "pt_BR",
+    alternateLocale: ["en_US"],
     images: [{ url: "/assets/lucas.jpeg", width: 800, height: 960, alt: "Lucas Alves" }],
   },
   twitter: {
@@ -60,13 +59,13 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({
+export default function PtLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={geist.variable}>
+    <html lang="pt-BR" className={geist.variable}>
       <body style={{ fontFamily: "var(--font-geist), system-ui, sans-serif" }}>
         {children}
       </body>
